@@ -10,9 +10,23 @@
 
   <style>
     /* Custom CSS */
-    body {
-      font-family: Arial, sans-serif;
+
+    .navbar {
+    background-image: url('bgnav.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     }
+
+    body {
+    font-family: Arial, sans-serif;
+    background-image: url('bg1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    .custom-button {
+    background-color: orange;
+   
+  }
 
    /* ... */
   
@@ -56,6 +70,10 @@
       height: 400px;
       object-fit: cover;
     }
+    #services .card-img-top {
+    height: 350px;
+    object-fit: cover;
+  }
   
     #gallery .carousel-item .overlay {
       position: absolute;
@@ -120,7 +138,7 @@
   <header class="jumbotron text-center">
     <h1>Welcome to De Lensa</h1>
     <p>Your destination for art, toys, and UAVs</p>
-    <a href="#about" class="btn btn-primary">Learn More</a>
+    <a href="#about" class="btn btn-primary custom-button">Learn More</a>
   </header>
 
   <!-- About Section -->
@@ -136,7 +154,7 @@
             with innovative design ideas and helping them improve their products.</p>
         </div>
         <div class="col-md-6">
-          <img src="path/to/about-image.jpg" alt="About Image" class="img-fluid">
+          <img src="bg1.png" alt="About Image" class="img-fluid">
         </div>
       </div>
     </div>
@@ -149,7 +167,7 @@
       <div class="row">
         <div class="col-md-4">
           <div class="card mb-4">
-            <img src="path/to/service-image1.jpg" alt="Service 1" class="card-img-top">
+            <img src="businesscard1.avif" alt="Service 1" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Engravings</h5>
               <p class="card-text">We offer high-quality engravings based on our customers' desires.</p>
@@ -158,7 +176,7 @@
         </div>
         <div class="col-md-4">
           <div class="card mb-4">
-            <img src="path/to/service-image2.jpg" alt="Service 2" class="card-img-top">
+            <img src="keys.jpeg" alt="Service 2" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Portraits</h5>
               <p class="card-text">Capture your special moments with our exquisite portrait services.</p>
@@ -167,10 +185,10 @@
         </div>
         <div class="col-md-4">
           <div class="card mb-4">
-            <img src="path/to/service-image3.jpg" alt="Service 3" class="card-img-top">
+            <img src="logodesign.jpeg" alt="Service 3" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Design Consultation</h5>
-              <p class="card-text">We collaborate with small companies, providing them with innovative design ideas.</p>
+              <p class="card-text">We are helping Small Companies to create logos.</p>
             </div>
           </div>
         </div>
