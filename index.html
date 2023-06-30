@@ -163,41 +163,64 @@
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center">Our Services</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <img src="businesscard1.avif" alt="Service 1" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Engravings</h5>
-              <p class="card-text">We offer high-quality engravings based on our customers' desires.</p>
-            </div>
+ <!-- Services Section -->
+ <section id="services" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center">Our Services</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="businesscard1.avif" alt="Service 1" class="card-img-top" onclick="showServiceDetails(1)">
+          <div class="card-body">
+            <h5 class="card-title">Engravings</h5>
+            <p class="card-text">We offer high-quality engravings based on our customers' desires.</p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <img src="keys.jpeg" alt="Service 2" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Portraits</h5>
-              <p class="card-text">Capture your special moments with our exquisite portrait services.</p>
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="keys.jpeg" alt="Service 2" class="card-img-top" onclick="showServiceDetails(2)">
+          <div class="card-body">
+            <h5 class="card-title">Portraits</h5>
+            <p class="card-text">Capture your special moments with our exquisite portrait services.</p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <img src="logodesign.jpeg" alt="Service 3" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Design Consultation</h5>
-              <p class="card-text">We are helping Small Companies to create logos.</p>
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="logodesign.jpeg" alt="Service 3" class="card-img-top" onclick="showServiceDetails(3)">
+          <div class="card-body">
+            <h5 class="card-title">Design Consultation</h5>
+            <p class="card-text">We collaborate with small companies, providing them with innovative design ideas.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- ... -->
+
+<!-- Service Details Modal -->
+<div class="modal fade" id="serviceDetailsModal" tabindex="-1" role="dialog" aria-labelledby="serviceDetailsModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="serviceDetailsModalLabel">Service Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="serviceDetailsContent">
+        <!-- Service details will be dynamically added here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- Team Section -->
   <section id="team" class="py-5">
@@ -312,9 +335,62 @@
 </section>
 
 
+  <!-- ... -->
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    function showServiceDetails(serviceId) {
+      var serviceDetails;
+      switch (serviceId) {
+        case 1:
+          serviceDetails = {
+            title: "Engravings",
+            description: "We offer high-quality engravings based on our customers' desires.",
+            price: "R50",
+            duration: "2 hours"
+          };
+          break;
+        case 2:
+          serviceDetails = {
+            title: "Portraits",
+            description: "Capture your special moments with our exquisite portrait services.",
+            price: "R100",
+            duration: "1 hour"
+          };
+          break;
+        case 3:
+          serviceDetails = {
+            title: "Design Consultation",
+            description: "We collaborate with small companies, providing them with innovative design ideas.",
+            price: "Customized",
+            duration: "Varies"
+          };
+          break;
+        default:
+          serviceDetails = {
+            title: "",
+            description: "",
+            price: "",
+            duration: ""
+          };
+      }
+
+      var modalTitle = document.getElementById("serviceDetailsModalLabel");
+      var modalBody = document.getElementById("serviceDetailsContent");
+
+      modalTitle.textContent = serviceDetails.title;
+      modalBody.innerHTML = `
+        <p>${serviceDetails.description}</p>
+        <p><strong>Price:</strong> ${serviceDetails.price}</p>
+        <p><strong>Duration:</strong> ${serviceDetails.duration}</p>
+      `;
+
+      $('#serviceDetailsModal').modal('show');
+    }
+  </script>
 </body>
 
 </html>
