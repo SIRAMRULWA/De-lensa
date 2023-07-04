@@ -10,11 +10,16 @@
       padding: 20px;
     }
     
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
     h2 {
       font-size: 20px;
       margin-bottom: 10px;
     }
-  
+    
     .product {
       margin-bottom: 30px;
     }
@@ -23,6 +28,45 @@
       width: 100%;
       height: auto;
     }
+    
+    /* CSS for carousel functionality */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    
+    .carousel-slides {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .carousel-slide {
+      flex-shrink: 0;
+      width: 100%;
+    }
+    
+    .carousel-navigation {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      z-index: 1;
+    }
+    
+    .carousel-navigation button {
+      font-size: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .carousel-navigation button:focus {
+      outline: none;
+    }
   </style>
 </head>
 <body>
@@ -30,68 +74,128 @@
   
   <div class="product">
     <h2>Product 1</h2>
-    <div id="product1-carousel" class="carousel">
-      <img class="carousel-image" src="product1_image1.jpg" alt="Product 1 - Image 1">
-      <img class="carousel-image" src="product1_image2.jpg" alt="Product 1 - Image 2">
-      <img class="carousel-image" src="product1_image3.jpg" alt="Product 1 - Image 3">
-      <img class="carousel-image" src="product1_image4.jpg" alt="Product 1 - Image 4">
+    <div class="carousel-container">
+      <div class="carousel-navigation">
+        <button class="carousel-previous">Previous</button>
+        <button class="carousel-next">Next</button>
+      </div>
+      <div class="carousel-slides">
+        <div class="carousel-slide">
+          <img src="product1_image1.jpg" alt="Product 1 - Image 1">
+        </div>
+        <div class="carousel-slide">
+          <img src="product1_image2.jpg" alt="Product 1 - Image 2">
+        </div>
+        <div class="carousel-slide">
+          <img src="product1_image3.jpg" alt="Product 1 - Image 3">
+        </div>
+        <div class="carousel-slide">
+          <img src="product1_image4.jpg" alt="Product 1 - Image 4">
+        </div>
+      </div>
     </div>
   </div>
   
   <div class="product">
     <h2>Product 2</h2>
-    <div id="product2-carousel" class="carousel">
-      <img class="carousel-image" src="product2_image1.jpg" alt="Product 2 - Image 1">
-      <img class="carousel-image" src="product2_image2.jpg" alt="Product 2 - Image 2">
-      <img class="carousel-image" src="product2_image3.jpg" alt="Product 2 - Image 3">
-      <img class="carousel-image" src="product2_image4.jpg" alt="Product 2 - Image 4">
+    <div class="carousel-container">
+      <div class="carousel-navigation">
+        <button class="carousel-previous">Previous</button>
+        <button class="carousel-next">Next</button>
+      </div>
+      <div class="carousel-slides">
+        <div class="carousel-slide">
+          <img src="product2_image1.jpg" alt="Product 2 - Image 1">
+        </div>
+        <div class="carousel-slide">
+          <img src="product2_image2.jpg" alt="Product 2 - Image 2">
+        </div>
+        <div class="carousel-slide">
+          <img src="product2_image3.jpg" alt="Product 2 - Image 3">
+        </div>
+        <div class="carousel-slide">
+          <img src="product2_image4.jpg" alt="Product 2 - Image 4">
+        </div>
+      </div>
     </div>
   </div>
   
   <div class="product">
     <h2>Product 3</h2>
-    <div id="product3-carousel" class="carousel">
-      <img class="carousel-image" src="product3_image1.jpg" alt="Product 3 - Image 1">
-      <img class="carousel-image" src="product3_image2.jpg" alt="Product 3 - Image 2">
-      <img class="carousel-image" src="product3_image3.jpg" alt="Product 3 - Image 3">
-      <img class="carousel-image" src="product3_image4.jpg" alt="Product 3 - Image 4">
+    <div class="carousel-container">
+      <div class="carousel-navigation">
+        <button class="carousel-previous">Previous</button>
+        <button class="carousel-next">Next</button>
+      </div>
+      <div class="carousel-slides">
+        <div class="carousel-slide">
+          <img src="product3_image1.jpg" alt="Product 3 - Image 1">
+        </div>
+        <div class="carousel-slide">
+          <img src="product3_image2.jpg" alt="Product 3 - Image 2">
+        </div>
+        <div class="carousel-slide">
+          <img src="product3_image3.jpg" alt="Product 3 - Image 3">
+        </div>
+        <div class="carousel-slide">
+          <img src="product3_image4.jpg" alt="Product 3 - Image 4">
+        </div>
+      </div>
     </div>
   </div>
   
   <div class="product">
     <h2>Product 4</h2>
-    <div id="product4-carousel" class="carousel">
-      <img class="carousel-image" src="product4_image1.jpg" alt="Product 4 - Image 1">
-      <img class="carousel-image" src="product4_image2.jpg" alt="Product 4 - Image 2">
-      <img class="carousel-image" src="product4_image3.jpg" alt="Product 4 - Image 3">
-      <img class="carousel-image" src="product4_image4.jpg" alt="Product 4 - Image 4">
+    <div class="carousel-container">
+      <div class="carousel-navigation">
+        <button class="carousel-previous">Previous</button>
+        <button class="carousel-next">Next</button>
+      </div>
+      <div class="carousel-slides">
+        <div class="carousel-slide">
+          <img src="product4_image1.jpg" alt="Product 4 - Image 1">
+        </div>
+        <div class="carousel-slide">
+          <img src="product4_image2.jpg" alt="Product 4 - Image 2">
+        </div>
+        <div class="carousel-slide">
+          <img src="product4_image3.jpg" alt="Product 4 - Image 3">
+        </div>
+        <div class="carousel-slide">
+          <img src="product4_image4.jpg" alt="Product 4 - Image 4">
+        </div>
+      </div>
     </div>
   </div>
   
   <script>
     // JavaScript for carousel functionality
-    const carousels = document.getElementsByClassName('carousel');
+    const carouselContainers = document.getElementsByClassName('carousel-container');
     
-    for (let i = 0; i < carousels.length; i++) {
-      const carousel = carousels[i];
-      const images = carousel.getElementsByClassName('carousel-image');
-      let currentImage = 0;
+    for (let i = 0; i < carouselContainers.length; i++) {
+      const carouselContainer = carouselContainers[i];
+      const carouselSlides = carouselContainer.getElementsByClassName('carousel-slides')[0];
+      const carouselPrevious = carouselContainer.getElementsByClassName('carousel-previous')[0];
+      const carouselNext = carouselContainer.getElementsByClassName('carousel-next')[0];
       
-      function showImage(index) {
-        for (let j = 0; j < images.length; j++) {
-          images[j].style.display = 'none';
-        }
-        
-        images[index].style.display = 'block';
+      let currentSlide = 0;
+      
+      carouselPrevious.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + carouselSlides.children.length) % carouselSlides.children.length;
+        updateCarousel();
+      });
+      
+      carouselNext.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % carouselSlides.children.length;
+        updateCarousel();
+      });
+      
+      function updateCarousel() {
+        carouselSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
       }
-      
-      showImage(currentImage);
-      
-      setInterval(() => {
-        currentImage = (currentImage + 1) % images.length;
-        showImage(currentImage);
-      }, 3000);
     }
   </script>
 </body>
 </html>
+
+
